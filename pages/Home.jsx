@@ -7,8 +7,11 @@ import ButtonMain from "../components/ButtonMain";
 import InputLogin from "../components/InputLogin";
 import {user} from '../mock/data.js'
 import { LoginContext } from "../App";
+import Search from "../components/Search";
+import Menu from "../components/Menu";
+import { LinearGradientText } from "react-native-linear-gradient-text";
 
-const Login = () => {
+const Home = () => {
 	const [currentMail, setCurrentMail] = useState('');
 	const [currentPass, setCurrentPass] = useState('');
 	const login = useContext(LoginContext);
@@ -26,32 +29,37 @@ const Login = () => {
 	}
 
 	return (
-		<SafeAreaView style={{ flex: 1, justifyContent: 'space-between' }}>
-			<View>
-				<InputLogin marTop={32} text={currentMail} placeholderText="example@gmail.com" setText={onInputMail} title="Почта" secure={false} type="mail"/>
-				<InputLogin marTop={40} text={currentPass} placeholderText="Password" setText={onInputPass} title="Пароль" secure={true} type="password" />
-				<Pressable 
-					style={{
-						marginTop: 50,
-						alignItems: 'center'
+		<SafeAreaView style={{ flex: 1 }}>
+			<View style={{
+				flex: 1,
+				backgroundColor: "#1E1E1E"
+			}}>
+				<View style={{
+					marginTop: 37,
+					flexDirection: "row",
+					justifyContent: 'space-around',
+					marginBottom: 35
+				}}>
+				<View style={{position: 'absolute',
+				left: 23,
+			}}>
+				<Menu />
+				</View>
+				<LinearGradientText 
+					start={{x: 0, y: 0}} 
+					end={{x: 1, y: 0}} 
+					colors={['#928F8F', '#DEDEDE']}
+					text="Smakolyk"
+					textStyle={{
+						fontFamily: "Poppins-Bold",
+						fontSize: 32
 					}}
-					onPress={() => {}}
-				>
-					<Text 
-						style={{
-							fontFamily: 'Poppins-Regular',
-							fontSize: 17,
-							color: "#FFD748"
-						}}
-					>Відновити пароль</Text>
-				</Pressable>
-			</View>	
-			<ButtonMain
-				text = "Увійти"
-				buttonPress={loginPress}
-			/>
+				/>
+				</View>
+				<Search />
+			</View>
 		</SafeAreaView>
 	)
 }
 
-export default Login
+export default Home

@@ -23,6 +23,7 @@ function RegisterNavigator({state, descriptors, navigation, position}) {
         <View style={{flexDirection: 'row'}}>
           {state.routes.map((route, index) => {
             const {options} = descriptors[route.key];
+            console.log('RouteKey:', route.key)
             const label =
               options.tabBarLabel !== undefined
                 ? options.tabBarLabel
@@ -61,6 +62,7 @@ function RegisterNavigator({state, descriptors, navigation, position}) {
 
             return (
               <TouchableOpacity
+                key={route.key}
                 accessibilityRole="button"
                 accessibilityState={isFocused ? {selected: true} : {}}
                 accessibilityLabel={options.tabBarAccessibilityLabel}
