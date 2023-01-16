@@ -10,6 +10,24 @@ import {
 import {color} from 'react-native-reanimated';
 
 import Logo from '../assets/images/logo.svg';
+import NavigatorTabs from './NavigatorTabs';
+
+const stylesRegister = {
+  text: {
+    fontFamily: 'Poppins-Bold',
+    fontSize: 18,
+    marginBottom: 4,
+  },
+  textFocus: 'black',
+  textUnfocus: '#7D7D7D',
+  view: {
+    width: 134,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  borderFocus: 3,
+  borderUnfocus: 0
+}
 
 function RegisterNavigator({state, descriptors, navigation, position}) {
   return (
@@ -20,77 +38,13 @@ function RegisterNavigator({state, descriptors, navigation, position}) {
           <Text style={styles.bannerText}>Smakolyk</Text>
           <Logo height={115} />
         </View>
-        <View style={{flexDirection: 'row'}}>
-          {state.routes.map((route, index) => {
-            const {options} = descriptors[route.key];
-            console.log('RouteKey:', route.key)
-            const label =
-              options.tabBarLabel !== undefined
-                ? options.tabBarLabel
-                : options.title !== undefined
-                ? options.title
-                : route.name;
-
-            const isFocused = state.index === index;
-
-            const onPress = () => {
-              const event = navigation.emit({
-                type: 'tabPress',
-                target: route.key,
-                canPreventDefault: true,
-              });
-
-              if (!isFocused && !event.defaultPrevented) {
-                // The `merge: true` option makes sure that the params inside the tab screen are preserved
-                navigation.navigate({name: route.name, merge: true});
-              }
-            };
-
-            const onLongPress = () => {
-              navigation.emit({
-                type: 'tabLongPress',
-                target: route.key,
-              });
-            };
-
-			// Make animation
-            const inputRange = state.routes.map((_, i) => i);
-            const opacity = position.interpolate({
-              inputRange,
-              outputRange: inputRange.map(i => (i === index ? 1 : 0)),
-            });
-
-            return (
-              <TouchableOpacity
-                key={route.key}
-                accessibilityRole="button"
-                accessibilityState={isFocused ? {selected: true} : {}}
-                accessibilityLabel={options.tabBarAccessibilityLabel}
-                testID={options.tabBarTestID}
-                onPress={onPress}
-                onLongPress={onLongPress}
-                style={{flex: 1, alignItems: 'center'}}>
-                <Animated.View
-                  style={{
-                    width: 134,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderBottomWidth: isFocused ? 3 : 0,
-                  }}>
-                  <Animated.Text
-                    style={{
-                      fontFamily: 'Poppins-Bold',
-                      fontSize: 18,
-                      marginBottom: 4,
-                      color: isFocused ? 'black' : '#7D7D7D',
-                    }}>
-                    {label}
-                  </Animated.Text>
-                </Animated.View>
-              </TouchableOpacity>
-            );
-          })}
-        </View>
+        <NavigatorTabs 
+          state={state} 
+          descriptors={descriptors} 
+          navigation={navigation} 
+          position={position}
+          tabStyles={stylesRegister}
+        />
       </View>
     </>
   );

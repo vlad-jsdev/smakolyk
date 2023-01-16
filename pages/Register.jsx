@@ -16,12 +16,12 @@ const Register = () => {
   }
   return (
     <SafeAreaView style={{flex: 1, justifyContent: 'space-between'}}>
-		<View>
-			<InputLogin marTop={32} text={currentValue} placeholderText="example@gmail.com" setText={onInputText} title="Почта" secure={false} type="mail"/>
-			<InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Пароль" secure={true} type="password" />
-			<InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Повторите пароль" secure={true} type="password" />
-		</View>
-		<ButtonMain text="Зареєструватися" buttonPress={registerPress}/>
+      <View>
+        <InputLogin marTop={32} text={currentValue} placeholderText="example@gmail.com" setText={onInputText} title="Почта" secure={false} type="mail"/>
+        <InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Пароль" secure={true} type="password" />
+        <InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Повторите пароль" secure={true} type="password" />
+      </View>
+      <ButtonMain text="Зареєструватися" buttonPress={registerPress}/>
     </SafeAreaView>
   );
 };

@@ -5,11 +5,17 @@ import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 import ButtonMain from "../components/ButtonMain";
 import InputLogin from "../components/InputLogin";
+import {NavigationContainer} from '@react-navigation/native';
 import {user} from '../mock/data.js'
 import { LoginContext } from "../App";
 import Search from "../components/Search";
 import Menu from "../components/Menu";
 import { LinearGradientText } from "react-native-linear-gradient-text";
+import DishesNavigator from '../components/DishesNavigator';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import Dishes from "./Dishes";
+
+const Tab = createMaterialTopTabNavigator();
 
 const Home = () => {
 	const [currentMail, setCurrentMail] = useState('');
@@ -57,6 +63,26 @@ const Home = () => {
 				/>
 				</View>
 				<Search />
+				<NavigationContainer>
+					<Tab.Navigator tabBar={props => <DishesNavigator {...props} />}>
+					<Tab.Screen 
+						name="Їжа" 
+						children={() => <Dishes tabTitle="Їжа" />}
+					/>
+					<Tab.Screen 
+						name="Напої" 
+						children={() => <Dishes tabTitle="Напої" />} 
+					/>
+					<Tab.Screen 
+						name="Ланчі" 
+						children={() => <Dishes tabTitle="Ланчі" />} 
+					/>
+					<Tab.Screen 
+						name="Супи" 
+						children={() => <Dishes tabTitle="Супи" />}
+					/>
+					</Tab.Navigator>
+          		</NavigationContainer>
 			</View>
 		</SafeAreaView>
 	)
