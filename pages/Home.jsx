@@ -35,10 +35,9 @@ const Home = () => {
 	}
 
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<SafeAreaView style={{ flex: 1, backgroundColor: "#3F3F3E" }}>
 			<View style={{
-				flex: 1,
-				backgroundColor: "#1E1E1E"
+				flex: 1
 			}}>
 				<View style={{
 					marginTop: 37,
@@ -63,7 +62,7 @@ const Home = () => {
 				/>
 				</View>
 				<Search />
-				<NavigationContainer>
+				<NavigationContainer independent={true}>
 					<Tab.Navigator tabBar={props => <DishesNavigator {...props} />}>
 					<Tab.Screen 
 						name="Їжа" 

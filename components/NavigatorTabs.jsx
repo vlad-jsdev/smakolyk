@@ -37,10 +37,10 @@ const NavigatorTabs = ({state, descriptors, navigation, position, tabStyles}) =>
               });
             };
             const inputRange = state.routes.map((_, i) => i);
-            const opacity = position.interpolate({
-              inputRange,
-              outputRange: inputRange.map(i => (i === index ? 1 : 0)),
-            });
+            // const opacity = position.interpolate({
+            //   inputRange,
+            //   outputRange: inputRange.map(i => (i === index ? 1 : 0)),
+            // });
 
             return (
               <TouchableOpacity
@@ -61,7 +61,8 @@ const NavigatorTabs = ({state, descriptors, navigation, position, tabStyles}) =>
                   <Animated.Text
                     style={[
                       tabStyles.text,
-                      {color: isFocused ? tabStyles.textFocus : tabStyles.textUnfocus}
+                      {color: isFocused ? tabStyles.textFocus : tabStyles.textUnfocus},
+                      {fontWeight: isFocused ? tabStyles.fontWeightFocus : tabStyles.fontWeightUnfocus}
                     ]
                     }>
                     {label}

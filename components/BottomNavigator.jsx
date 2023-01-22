@@ -1,4 +1,4 @@
-import NavigatorTabs from './NavigatorTabs'
+import NavigatorTabsBottom from '../components/NavigatorTabsBottom'
 
 const stylesRegister = {
 	text: {
@@ -15,22 +15,20 @@ const stylesRegister = {
 	  width: 80,
 	  alignItems: 'center',
 	  justifyContent: 'center',
-	  borderColor: '#FFD748',
+	  borderColor: 'red',
 	},
 	borderFocus: 3,
 	borderUnfocus: 0
   }
 
-const DishesNavigator = ({state, descriptors, navigation, position}) => {
+const BottomNavigator = ({state, descriptors, navigation, position}) => {
 	return(
-		<NavigatorTabs 
+		<NavigatorTabsBottom 
           state={state} 
           descriptors={descriptors} 
           navigation={navigation} 
           position={position}
-		  tabStyles={stylesRegister}
         />
 	)
 }
-
-export default DishesNavigator
+export default BottomNavigator
