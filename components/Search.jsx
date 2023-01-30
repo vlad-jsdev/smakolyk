@@ -1,8 +1,27 @@
-import { View, Text } from "react-native"
-import Pressable from "react-native/Libraries/Components/Pressable/Pressable"
+import {useState} from "react"
+import { View } from "react-native"
+import { TextInput } from "react-native-gesture-handler";
 import SearchIcon from "../assets/images/search.svg"
+import { useNavigation } from '@react-navigation/native';
+import {dishesData} from '../mock/data'
+
 
 const Search = () => {
+	const [textInputValue, setTextInputValue] = useState('')
+	const navigation = useNavigation()
+
+	const pressSearch = () => {
+		const results = dishesData.filter((item) => {
+		if(item.title.toLowerCase().includes(textInputValue.toLowerCase())) {
+			return item
+		} }
+		)
+		navigation.navigate('Пошук', {
+			searchText: textInputValue,
+			findDishes: results
+		})
+	}
+
 	return (
 		<View style={{
 			height: 60,
@@ -13,19 +32,25 @@ const Search = () => {
 			marginHorizontal: 23
 		}}>
 			<View style={{
-				marginLeft: 35
+				marginLeft: 35,
+				flexDirection: 'row'
 			}}>
-				<Pressable >
-					<SearchIcon height={60}/>
-					<Text style={{
-						position: 'absolute',
-						top: 20,
-						left: 40,
-						fontFamily: "Poppins-Regular",
-						fontSize: 17,
-						color: "#999999"
-					}}>Пошук</Text>
-				</Pressable>
+					<SearchIcon height={60} onPress={() => pressSearch()}/>
+					<TextInput
+						autoCapitalize={'none'}
+						style={{
+							marginLeft: 10,
+							marginTop: 10,
+							alignItems: 'center',
+							fontFamily: 'Poppins-Regular',
+							fontSize: 17,
+							height: 40,
+						}}
+						onChangeText={text => setTextInputValue(text)}
+						value={textInputValue}
+						placeholder="Пошук"
+						textContentType="text"
+					/>
 			</View>
 		</View>
 	)

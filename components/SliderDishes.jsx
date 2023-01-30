@@ -1,4 +1,4 @@
-import { FlatList, View, Dimensions } from 'react-native'
+import { FlatList } from 'react-native'
 import ItemDish from "./ItemDish"
 
 
@@ -8,7 +8,7 @@ const SliderDishes = ({dishes}) => {
 				style={{backgroundColor: '#3F3F3E'}}
 				data={dishes}
 				horizontal={true}
-				renderItem={({item}) => <ItemDish title={item.title} img={item.img} price={item.price} />}
+				renderItem={({item}) => <ItemDish title={item.title} img={item.img} price={item.price} infoDish={item.infoDish} />}
 				keyExtractor={item => item.id}
 			/>
 	)

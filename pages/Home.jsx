@@ -14,6 +14,7 @@ import { LinearGradientText } from "react-native-linear-gradient-text";
 import DishesNavigator from '../components/DishesNavigator';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Dishes from "./Dishes";
+import SearchPage from "./SearchPage";
 
 const Tab = createMaterialTopTabNavigator();
 

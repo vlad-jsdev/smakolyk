@@ -5,6 +5,7 @@ import SliderDishes from '../components/SliderDishes'
 import ButtonMain from "../components/ButtonMain"
 
 
+
 const Dishes = ({tabTitle}) => {
 	const [isDishes, setDishes] = useState([])
 	const press = () => {
@@ -20,7 +21,17 @@ const Dishes = ({tabTitle}) => {
 	return (
 		<View style={{ flex: 1, backgroundColor: '#3F3F3E'}}>
 			<SliderDishes dishes = {isDishes} />
-			<ButtonMain text={'Більше'} buttonPress={press}/>
+			<View style={{ alignItems: 'center'}}>
+				<ButtonMain 
+					text={'Більше'} 
+					buttonPress={press}
+					height={50} 
+					width={224} 
+					paddingV={null} 
+					paddingH={0}
+					marginB={20}
+				/>
+			</View>	
 		</View>
 	)
 }

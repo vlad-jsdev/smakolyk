@@ -1,7 +1,6 @@
-import { View, Text, StyleSheet, Image, Alert } from "react-native"
-import { dishesData } from '../mock/data.js'
+import { View, Text, StyleSheet, Image } from "react-native"
 
-const ItemDish = ({title, img, price}) => {
+const ItemDish = ({title, img, price, infoDish}) => {
 	return(
 		<View style={styles.boxWrap}>
 			<View style={styles.boxImg}>

@@ -21,7 +21,7 @@ const Register = () => {
         <InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Пароль" secure={true} type="password" />
         <InputLogin marTop={40} text={currentValue} placeholderText="Password" setText={onInputText} title="Повторите пароль" secure={true} type="password" />
       </View>
-      <ButtonMain text="Зареєструватися" buttonPress={registerPress}/>
+      <ButtonMain text="Зареєструватися" buttonPress={registerPress} paddingH={22} paddingV={23} marginB={50}/>
     </SafeAreaView>
   );
 };

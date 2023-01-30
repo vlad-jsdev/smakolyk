@@ -49,6 +49,9 @@ const Login = () => {
 			<ButtonMain
 				text = "Увійти"
 				buttonPress={loginPress}
+				paddingH={22} 
+				paddingV={23}
+				marginB={50}
 			/>
 		</SafeAreaView>
 	)

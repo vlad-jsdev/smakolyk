@@ -1,30 +1,25 @@
-import { View, SafeAreaView, Text } from "react-native"
-import Back from '../components/Back'
+import { Text, View, SafeAreaView } from "react-native"
+import { LinearGradientText } from "react-native-linear-gradient-text";
 
-const Likes = ({navigation, route}) => {
-	return (
+import Back from "../components/Back"
+import Like from "../assets/images/like.svg"
+import ItemInfo from "../components/ItemInfo";
+
+const OneDish = ({navigation, route}) => {
+	return(
 		<SafeAreaView style={{ flex: 1, backgroundColor: "#3F3F3E" }}>
 			<View style={{
 							flexDirection: 'row',
 							justifyContent: 'space-between',
 							marginHorizontal: 24,
-							marginVertical: 32,
-							alignItems: 'center'
+							marginVertical: 32
 						}}>
 				<View style={{flexDirection: 'row'}}>
 				<Back navigation={navigation} />
 				
 				</View>
 				<View>
-				<Text style={{
-					alignSelf: 'center',
-					fontFamily: 'Poppins-Bold',
-					fontSize: 24,
-					color: 'white'
-				}}>
-					Обране
-				</Text>
-				{/* <LinearGradientText 
+				<LinearGradientText 
 					start={{x: 0, y: 0}} 
 					end={{x: 1, y: 0}} 
 					colors={['#928F8F', '#DEDEDE']}
@@ -33,14 +28,15 @@ const Likes = ({navigation, route}) => {
 						fontFamily: "Poppins-Bold",
 						fontSize: 28
 					}}
-				/> */}
+				/>
 				</View>
-				<View style={{width: 30}}>
-				{/* <Like /> */}
+				<View style={{alignSelf: 'center'}}>
+				<Like />
 				</View>
 			</View>
-			{/* <ItemInfo info={route.params}/> */}
+			<ItemInfo info={route.params}/>
 		</SafeAreaView>
 	)
-} 
-export default Likes
+}
+
+export default OneDish

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Pressable, StyleSheet, Dimensions } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-let width = Dimensions.get('window').width; //full width
+let width = Dimensions.get('window').width;
 
 const LoginTabButtons = () => {
 	const navigation = useNavigation()

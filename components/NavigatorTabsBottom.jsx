@@ -6,6 +6,11 @@ import LikesSvg from "../assets/images/menu/likes.svg"
 import BasketSvg from "../assets/images/menu/basket.svg"
 
 const NavigatorTabsBottom = ({state, descriptors, navigation}) => {
+	// console.log('Descriptions: ', descriptors)
+	// const focusedOptions = descriptors[state.routes[state.index].key];
+	// if (focusedOptions?.tabBarStyle?.display === "none") {
+	// 	return null;
+	// }
 	return (
 	<View style={{ flexDirection: 'row', height: 80}}>
       {state.routes.map((route, index) => {
@@ -50,7 +55,6 @@ const NavigatorTabsBottom = ({state, descriptors, navigation}) => {
           });
 
           if (!isFocused && !event.defaultPrevented) {
-            // The `merge: true` option makes sure that the params inside the tab screen are preserved
             navigation.navigate({ name: route.name, merge: true });
           }
         };
@@ -73,9 +77,6 @@ const NavigatorTabsBottom = ({state, descriptors, navigation}) => {
             onLongPress={onLongPress}
             style={{ flex: 1, backgroundColor: '#3F3F3E', alignItems: 'center' }}
           >
-            {/* <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
-              {label}
-            </Text> */}
 			<View style={{top: 20}}>
 				{icon}
 			</View>
