@@ -77,6 +77,9 @@ const Order = ({navigation, route}) => {
 					<RadioGroup 
 						radioButtons={radioButtons} 
 						onPress={onPressRadioButton} 
+						style={{
+							color: 'red'
+						}}
 					/>
 				</View>
 			</View>
