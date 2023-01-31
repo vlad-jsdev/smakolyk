@@ -1,6 +1,10 @@
 export const user = {
     mail: '1',
-    password: '1'
+    password: '1',
+    name: 'Anastasiia',
+    lastName: 'Lysytska',
+    address: 'ul. Kvitkova 67',
+    img: require('../assets/images/profile/profImg.jpeg')
 }
 
 export const dishesData = [
@@ -10,7 +14,8 @@ export const dishesData = [
     title: '​Smakolyk салат',
     img: require('../assets/images/dishes/image1.png'),
     price: 170,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 2,
@@ -18,7 +23,8 @@ export const dishesData = [
     title: 'Лаваш з зеленню',
     img: require('../assets/images/dishes/image2.png'),
     price: 60,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 3,
@@ -26,7 +32,8 @@ export const dishesData = [
     title: 'Бізнес Ланч #1',
     img: require('../assets/images/dishes/image3.png'),
     price: 150,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 4,
@@ -34,7 +41,8 @@ export const dishesData = [
     title: 'Бізнес Ланч #2',
     img: require('../assets/images/dishes/image4.png'),
     price: 170,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 5,
@@ -42,7 +50,8 @@ export const dishesData = [
     title: 'Піца Маргарита',
     img: require('../assets/images/dishes/image5.png'),
     price: 140,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 6,
@@ -50,7 +59,8 @@ export const dishesData = [
     title: 'Піца Ла Рен',
     img: require('../assets/images/dishes/image6.png'),
     price: 170,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: true
   },
   {
     id: 7,
@@ -58,7 +68,8 @@ export const dishesData = [
     title: 'Піца Вегі',
     img: require('../assets/images/dishes/image7.png'),
     price: 99,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
   {
     id: 8,
@@ -66,7 +77,8 @@ export const dishesData = [
     title: 'Піца Песто',
     img: require('../assets/images/dishes/image8.png'),
     price: 185,
-    infoDish: 'Томатний соус, моцарелла'
+    infoDish: 'Томатний соус, моцарелла',
+    favorite: false
   },
 
 ]

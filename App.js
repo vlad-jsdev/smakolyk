@@ -24,6 +24,7 @@ import Login from './pages/Login';
 import RegisterNavigator from './components/RegisterNavigator';
 import BottomNavigationStack from './components/BottomNavigationStack';
 import OneDish from './pages/OneDish';
+import Order from './pages/Order';
 
 const Tab = createMaterialTopTabNavigator();
 export const LoginContext = createContext();
@@ -47,6 +48,7 @@ const App = () => {
                 component={BottomNavigationStack} />
               <Stack.Screen options={{ headerShown: false }} name="Пошук" component={SearchPage} />
               <Stack.Screen options={{ headerShown: false }} name="Страва" component={OneDish} />
+              <Stack.Screen options={{ headerShown: false }} name="Замовлення" component={Order} />
             </Stack.Navigator>
         ) : (
             <Tab.Navigator tabBar={props => <RegisterNavigator {...props} />}>

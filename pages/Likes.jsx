@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react"
 import { View, SafeAreaView, Text } from "react-native"
+import { FlatList } from "react-native-gesture-handler"
 import Back from '../components/Back'
+import ItemLikes from "../components/ItemLikes"
+import {dishesData} from '../mock/data'
 
 const Likes = ({navigation, route}) => {
+	const [isFav, setFav] = useState([])
+
+	useEffect(() => {
+		setFav(() => dishesData.filter((item) => item.favorite === true))
+	}, [])
+
+	const delItem = (id) => {
+		setFav(() => isFav.filter((item) => item.id !== id))
+	}
 	return (
 		<SafeAreaView style={{ flex: 1, backgroundColor: "#3F3F3E" }}>
 			<View style={{
@@ -24,22 +37,15 @@ const Likes = ({navigation, route}) => {
 				}}>
 					Обране
 				</Text>
-				{/* <LinearGradientText 
-					start={{x: 0, y: 0}} 
-					end={{x: 1, y: 0}} 
-					colors={['#928F8F', '#DEDEDE']}
-					text="Smakolyk"
-					textStyle={{
-						fontFamily: "Poppins-Bold",
-						fontSize: 28
-					}}
-				/> */}
 				</View>
 				<View style={{width: 30}}>
-				{/* <Like /> */}
 				</View>
 			</View>
-			{/* <ItemInfo info={route.params}/> */}
+			<FlatList 
+					data={isFav}
+					renderItem={({item}) => <ItemLikes delEl={() => delItem(item.id)} title={item.title} img={item.img} price={item.price} />}
+					keyExtractor={item => item.id}
+				/>
 		</SafeAreaView>
 	)
 } 
