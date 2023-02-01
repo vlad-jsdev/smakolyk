@@ -26,8 +26,8 @@ const stylesRegister = {
     justifyContent: 'center',
   },
   borderFocus: 3,
-  borderUnfocus: 0
-}
+  borderUnfocus: 0,
+};
 
 function RegisterNavigator({state, descriptors, navigation, position}) {
   return (
@@ -38,10 +38,10 @@ function RegisterNavigator({state, descriptors, navigation, position}) {
           <Text style={styles.bannerText}>Smakolyk</Text>
           <Logo height={115} />
         </View>
-        <NavigatorTabs 
-          state={state} 
-          descriptors={descriptors} 
-          navigation={navigation} 
+        <NavigatorTabs
+          state={state}
+          descriptors={descriptors}
+          navigation={navigation}
           position={position}
           tabStyles={stylesRegister}
         />
