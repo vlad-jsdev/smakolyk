@@ -39,27 +39,19 @@ To run the Smakolyk Food Delivery App locally, follow the steps below:
     `yarn install` 
     
 4.  Start the development server:
-    
-    sqlCopy code
-    
+        
     `npm start` 
     
     or
-    
-    sqlCopy code
-    
+        
     `yarn start` 
     
     Android start 
-    
-    sqlCopy code
-    
+        
     `react-native run-android`
     
     iOS start 
-    
-    sqlCopy code
-    
+        
     `react-native run-ios`
     
 5.  Follow the instructions provided to run the app on your preferred platform (iOS or Android).
